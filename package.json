@@ -1,6 +1,6 @@
 {
   "name": "deconstructed-word-list",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A list of words preprocessed with letter counts",
   "main": "dist/index.js",
   "scripts": {
