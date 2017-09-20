@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- lts/*
+script:
+- npm run-script prepare
+deploy:
+  - provider: releases
+    api_key:
+      secure: tJtVnoZeXz8A3ok8YHiqVmS/W+5b+twIUIJWh5aHeWs7XPLlwkvjnRUdhzfdkwGCIpgvc7u/lzwDa0B5bCQG5OAjFJWgdBlkaEvjNe1zDYAn601+vvP+PINAzAta6QULn/CQqFXHlQBc9PDwbPaFVHKwbpaFj46Yo1uVE7+m7OtFxjhrKjLGByOOULGZ7BgtX+26ew7/4bniEjPOyWSpzd16+t7gZgyJ52Qi3e9q9tqihu6VQD92uXu+2V9DzQPOVfmjjCGAOgfkZJt4/JDf8GcYdG2ENjpnUjr83no9D5VmWmnca2+1bWOYVzlJOQFcZA+zGrhu7fRRquzygm/nKQ329/ALKvivngGWGxiquIdUFm6uRDbxMDKzCufLB4wovSXB8vkL0848X58VIy8QwUm1vu7cjKwofh8/iO4T3k7tWxPpN6aWte/8gE06C4dEypOGLWgOFO89TNR1PDIb6Sy4cgywCqB8k29pQ2Uj5j7AZPPmc7B6J0KRHrNcutSJORLAu6Kexi2OPk99kINju4EBbbU0KzW2Bwc0ptKhCBChbsFcLAnridb5TDNGkfUrEkQpUEsd3M6LfjDKZp7/M5vSLfj+sLEnz1L+fC32yHsWCR3xyV3ENOpCd0LpKIsHY2QhR6mJKxzxbXwCT2+3inxj5PTpfnKg5CiPqvMssvE=
+    file: dist/index.js
+    skip_cleanup: true
+    on:
+     repo: tdukart/deconstructed-word-list
+     tags: true
+  - provider: npm
+    email: tdukart@aloftinteractive.com
+    api_key:
+      secure: "EkKz3Y4IWTmQt+16iBtCp3NWnzzMV5PbaxHq5THn69keu2WbFdYExELWupn4OguaEav6jNSQayDGTMiSv0TPw5YzAmhdX2V16cHvzv2fyNxEvIk8/omyjIa09O/uY5lLwwRz2X2QVquJgnMCOLZ7m5RamX85kvThM1K+oKnm/NeprGbNW18TFzrRSf9u7zkVbcpgcidJB2Af/Ybnb5NAUVyay3cB7i7/Ab1WPPzxgcqDhp7YL/dh4iIP6ZTrmq3Hftxg32GqER1RARufNnv4FNByJA3x9rbfgtVQ44z0kBKTHb0/8V2bdcDTir/OSzkAu2uGxtavFpSMAIV/lGbQfZh2aqIMoLw79GBOw1R48N/mJUxNyJVJq7pin+GIi7svQNGFUlCeSDn/hYxohYl7SN7EqQr+MUSO1pk2m+dCgCMe2TqYjyT92Y6/TdAlKhxL4RS+GDEYw58685uRA8XaKoRLOCr3ogdmNCEfpmVLlqhBp2CizxF7zJtQ4ZnMbIJC5cnYeVyBeh2FNZFm2bTkRLigzZBTSCU2nE0VVu5THE4Y8dZgkqmYK28MTKHBM25cbJulT5ci6R0Jfb+LG2e82pUUR0B1QQ1xxTkC5izX58HmCGqgku145t2kHH3qIHxDsF50lscIQgWqumgLjv/M3qV4SWt5aePZYDVBryDLOzM="
+    on:
+      repo: tdukart/deconstructed-word-list
+      tags: true
