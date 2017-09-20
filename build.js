@@ -37,7 +37,7 @@ var lengths = Object.keys( deconstructedWords ).map( function ( length ) {
 	return parseInt( length, 10 );
 } );
 
-var maxLength = Math.max.apply(null,lengths);
+var maxLength = Math.max.apply( null, lengths );
 
 for ( var i = 2; i <= maxLength; i++ ) {
 	upToLengthScripts[ i ] = [ 'var words = [];' ];
