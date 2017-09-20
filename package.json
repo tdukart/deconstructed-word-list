@@ -1,0 +1,15 @@
+{
+  "name": "deconstructed-word-list",
+  "version": "1.0.0",
+  "description": "A list of words preprocessed with letter counts",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "node build.js"
+  },
+  "author": "Todd Dukart <tdukart@aloftinteractive.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "word-list": "^2.0.0"
+  }
+}
