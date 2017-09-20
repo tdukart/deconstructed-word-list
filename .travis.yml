@@ -7,7 +7,8 @@ deploy:
   - provider: releases
     api_key:
       secure: tJtVnoZeXz8A3ok8YHiqVmS/W+5b+twIUIJWh5aHeWs7XPLlwkvjnRUdhzfdkwGCIpgvc7u/lzwDa0B5bCQG5OAjFJWgdBlkaEvjNe1zDYAn601+vvP+PINAzAta6QULn/CQqFXHlQBc9PDwbPaFVHKwbpaFj46Yo1uVE7+m7OtFxjhrKjLGByOOULGZ7BgtX+26ew7/4bniEjPOyWSpzd16+t7gZgyJ52Qi3e9q9tqihu6VQD92uXu+2V9DzQPOVfmjjCGAOgfkZJt4/JDf8GcYdG2ENjpnUjr83no9D5VmWmnca2+1bWOYVzlJOQFcZA+zGrhu7fRRquzygm/nKQ329/ALKvivngGWGxiquIdUFm6uRDbxMDKzCufLB4wovSXB8vkL0848X58VIy8QwUm1vu7cjKwofh8/iO4T3k7tWxPpN6aWte/8gE06C4dEypOGLWgOFO89TNR1PDIb6Sy4cgywCqB8k29pQ2Uj5j7AZPPmc7B6J0KRHrNcutSJORLAu6Kexi2OPk99kINju4EBbbU0KzW2Bwc0ptKhCBChbsFcLAnridb5TDNGkfUrEkQpUEsd3M6LfjDKZp7/M5vSLfj+sLEnz1L+fC32yHsWCR3xyV3ENOpCd0LpKIsHY2QhR6mJKxzxbXwCT2+3inxj5PTpfnKg5CiPqvMssvE=
-    file: dist/index.js
+    file_glob: true
+    file: dist/*
     skip_cleanup: true
     on:
      repo: tdukart/deconstructed-word-list
