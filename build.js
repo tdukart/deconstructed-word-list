@@ -15,29 +15,18 @@ var disassembleString = function ( string ) {
 	return components;
 };
 
-var deconstructedWords = {};
+var deconstructedWords = [];
 
 fs.readFileSync( wordListPath, 'utf8' ).split( '\n' ).forEach( function ( word ) {
-	var firstLetter = word.toLowerCase().substr( 0, 1 );
-	deconstructedWords[ firstLetter ] = deconstructedWords[ firstLetter ] || [];
-	deconstructedWords[ firstLetter ].push( [ word, disassembleString( word ) ] );
+	deconstructedWords.push( [ word, disassembleString( word ) ] );
 } );
 
 if ( !fs.existsSync( 'dist' ) ) {
 	fs.mkdirSync( 'dist' );
 }
 
-var scriptList = [];
-var indexScript = [ 'var words = [];' ];
+var indexScript = [];
 
-Object.keys( deconstructedWords ).forEach( function ( firstLetter ) {
-	var letterScript = 'module.exports = ' + JSON.stringify( deconstructedWords[ firstLetter ] ) + ';';
-
-	fs.writeFileSync( 'dist/' + firstLetter + '.js', letterScript );
-
-	indexScript.push( 'words.concat(require("./' + firstLetter + '.js"));' );
-} );
-
-indexScript.push( 'module.exports = words;' );
+indexScript.push( 'module.exports = ' + JSON.stringify( deconstructedWords ) + ';' );
 
 fs.writeFileSync( 'dist/index.js', indexScript.join( '\n' ) );
