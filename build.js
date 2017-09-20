@@ -2,6 +2,7 @@
 
 var fs = require( 'fs' );
 var wordListPath = require( 'word-list' );
+var json5 = require('json5');
 
 var disassembleString = function ( string ) {
 	var filteredString = string.replace( /[^A-Z]/gi, '' ).toUpperCase();
@@ -27,6 +28,6 @@ if ( !fs.existsSync( 'dist' ) ) {
 
 var indexScript = [];
 
-indexScript.push( 'module.exports = ' + JSON.stringify( deconstructedWords ) + ';' );
+indexScript.push( 'module.exports = ' + json5.stringify( deconstructedWords ) + ';' );
 
 fs.writeFileSync( 'dist/index.js', indexScript.join( '\n' ) );
