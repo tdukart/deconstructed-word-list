@@ -14,7 +14,7 @@
   "author": "Todd Dukart <tdukart@aloftinteractive.com>",
   "license": "MIT",
   "devDependencies": {
-    "json5": "^0.5.1",
+    "json5": "^2.1.0",
     "word-list": "^3.1.0"
   }
 }
