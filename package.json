@@ -15,6 +15,6 @@
   "license": "MIT",
   "devDependencies": {
     "json5": "^0.5.1",
-    "word-list": "^2.0.0"
+    "word-list": "^3.1.0"
   }
 }
